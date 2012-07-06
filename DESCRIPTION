@@ -1,0 +1,22 @@
+Package: pitchFX
+Title: Carson's package
+Version: 0.1
+Author: Carson Sievert <sievert@iastate.edu>
+Maintainer: Carson Sievert <sievert@iastate.edu>
+Description: Scraping and animating Major League Baseball's Pitch F/X data
+License: MIT
+Depends:
+    ggplot2,
+    XML,
+    plyr,
+    lubridate,
+    stringr,
+    animation,
+    plumbr
+
+Collate:
+	'animateFX.R',
+	'help.R',
+	'optional.R'
+	'scrapePitchFX.R'
+	'UrlsToDataFrame.R'
