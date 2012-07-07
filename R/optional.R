@@ -1,8 +1,8 @@
-########################################################################
-#Functions that may not make the package (but useful for own purposes)
-########################################################################
+#'Generate miniscoreboard urls.
+#'
+#' @param first.date  date (yyyy-mm-dd) to commence scraping of pitch F/X data
+#' @param last.date date (yyyy-mm-dd) to terminate scraping pitch F/X data
 
-#Generate "miniscoreboard" urls for a given time period
 getMiniScoreboards <- function(first.date, last.date) {
   start <- as.Date(first.date)
   end <- as.Date(last.date)
@@ -16,9 +16,21 @@ getMiniScoreboards <- function(first.date, last.date) {
   return(scoreboards)
 }
 
-#This function returns every unique "tag" for a given set of urls and a specific node. 
-#This is useful for finding a "masterlist" of field names for a table. 
-#The field names should be extracted before the data is scraped
+#'Find the most complete set of "tags" for an XML node in a given file.
+#'
+#' @param butes XML attributes from an XML node
+
+masterlist <- function(butes){ 
+  tags <- llply(butes, function(x) { names(x) })
+  return(rev(unique(tags))[[1]]) 
+}
+
+#'Find the most complete set of "tags" for an XML node in a given set of urls.
+#'
+#'The field names should be extracted before the data is scraped
+#'
+#' @param urls 
+#' @param node name of XML node
 
 getFieldNames <- function(urls, node = "game") {
   all.tags <- NULL
