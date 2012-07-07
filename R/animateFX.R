@@ -1,3 +1,21 @@
+#' Animate Pitch F/X
+#' 
+#' Pitch trajectories animated on a two-dimensional plot.
+#' 
+#' Details to go here.
+#' 
+#' @param data pitch F/X data to be visualized.
+#' @param color variables within the data set that determine different colors
+#' @param facets variables within the data set that determine different facets
+#' @param time.interval time interval between flushing of plot
+#' @return ggplot2 object
+#' @export
+#' @example
+#' #' animateFX(data = pitchFX, color = "pitch_type", facets = "p_throws",
+#' time.interval = 0.01)
+#' #Possible choices for color and facets. Does it make sense to have one variable determine both color and facet?
+#' #c("pitcher", "batter", "p_throws", "stand", "zone", "type", "pitch_type", "event")
+
 animateFX <- function(data, color, facets, time.interval = 0.01){ 
   #Add descriptions to pitch types
   p.types <- cbind(pitch_type=c("SI", "FF", "IN", "SL", "CU", "CH", "FT", "FC", "PO", "KN", "FS", "FA", NA, "FO"),
