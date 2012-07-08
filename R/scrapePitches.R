@@ -26,7 +26,7 @@ scrapePitchFX <- function(start = "2012-01-01", end = Sys.Date(), game.data = al
   end <- as.POSIXct(end)
   if (year(start) < 2005) stop("Not only is pitchFX data not avaliable before 2008, data on each game isn't complete until 2005")
   if (year(start) < 2008) stop("Warning: pitchFX data wasn't recorded consistently until 2008. Please consider a later start date.")
-  if (end > Sys.Date()) stop("Sorry, I can't scrape data on the future!")
+  if (end > as.POSIXct(Sys.Date())) stop("Sorry, I can't scrape data on the future!")
   all.games <- data(game.data)
   urls <- all.games[(all.games$date > start & all.games$date < end), "url"]
   p <- c("ax", "ay", "az", "break_angle", "break_length", "break_y", "cc", "des", 
