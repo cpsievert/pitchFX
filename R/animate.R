@@ -10,7 +10,7 @@
 #' @param time.interval time interval between flushing of plot
 #' @return ggplot2 object
 #' @export
-#' @example
+#' @examples
 #' animateFX(data = pitchFX, color = "pitch_type", facets = "p_throws",
 #' time.interval = 0.01)
 #' #Possible choices for color and facets. Does it make sense to have one 

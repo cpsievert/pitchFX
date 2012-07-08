@@ -8,7 +8,7 @@
 #' @param end date "yyyy-mm-dd" to terminate scraping pitch F/X data
 #' @return Returns a list containing two different data frames. The larger data frame contains data on every pitch thrown (pitch F/X). The smaller one contains data on every atbat.
 #' @export
-#' @example
+#' @examples
 #' ptm <- proc.time()
 #' data <- scrapePitchFX(start = "2011-05-01", end = "2011-05-01")
 #' ptm
