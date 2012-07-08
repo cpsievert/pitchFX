@@ -2,7 +2,8 @@
 \alias{scrapePitchFX}
 \title{Scrape Pitch F/X Data}
 \usage{
-  scrapePitchFX(start = "2012-01-01", end = Sys.Date())
+  scrapePitchFX(start = "2012-01-01", end = Sys.Date(),
+    game.data = all_games)
 }
 \arguments{
   \item{start}{date "yyyy-mm-dd" to commence scraping of
@@ -10,6 +11,8 @@
 
   \item{end}{date "yyyy-mm-dd" to terminate scraping pitch
   F/X data}
+
+  \item{game.data}{data set with game URLs}
 }
 \value{
   Returns a list containing two different data frames. The
