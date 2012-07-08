@@ -1,20 +1,22 @@
 \name{urlsToDataFrame}
 \alias{urlsToDataFrame}
-\title{Scraping Work Horse}
+\title{Scraping work horse}
 \usage{
+  urlsToDataFrame(urls, p.tags, ab.tags)
+
   urlsToDataFrame(urls, p.tags, ab.tags)
 }
 \arguments{
-  \item{urls}{vector of strings describing web addresses}
+  \item{urls}{URLs for parsing}
 
-  \item{p.tags}{something}
+  \item{p.tags}{field names for the pitch F/X table}
 
-  \item{ab.tags}{something else export}
+  \item{ab.tags}{field names for the atbats table}
 }
 \description{
-  this function goes out to the website and pulls data
-}
-\details{
-  more elaborate description here
+  Scraping work horse
+
+  This function takes on a list of URLs and returns a data
+  frame
 }
 

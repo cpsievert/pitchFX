@@ -8,17 +8,6 @@
 #' @param end date "yyyy-mm-dd" to terminate scraping pitch F/X data
 #' @return Returns a list containing two different data frames. The larger data frame contains data on every pitch thrown (pitch F/X). The smaller one contains data on every atbat.
 #' @export
-#' @example
-#' #' ptm <- proc.time()
-#' data <- scrapePitchFX(start = "2011-05-01", end = "2011-05-01")
-#' ptm
-#'
-#' pitches <- data$pitches
-#' atbats <- data$atbats
-#' pitchFX <- join(pitches, atbats, by = c("num", "url"))
-#'
-#' unique(pitchFX$pitch_type)
-#' pitchFX <- pitchFX[pitchFX$pitch_type == c("SL","CU"), ]
 
 scrapePitchFX <- function(start = "2012-01-01", end = Sys.Date()) { #make fields flexible?
   first.date <- paste("('", start, "')", sep = "")

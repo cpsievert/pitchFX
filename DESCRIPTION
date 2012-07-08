@@ -13,10 +13,9 @@ Depends:
     stringr,
     animation,
     plumbr
-
 Collate:
-	'animateFX.R',
-	'help.R',
-	'optional.R'
-	'scrapePitchFX.R'
-	'UrlsToDataFrame.R'
+    'UrlsToDataFrame.R'
+    'help.R'
+    'optional.R'
+    'animate.R'
+    'scrapePitches.R'
