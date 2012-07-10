@@ -27,15 +27,15 @@
   Details go here.
 }
 \examples{
-ptm <- proc.time()
-data <- scrapePitchFX(start = "2011-05-01", end = "2011-05-01")
-ptm
+#ptm <- proc.time()
+#data <- scrapePitchFX(start = "2011-05-01", end = "2011-05-01")
+#ptm
 
-pitches <- data$pitches
-atbats <- data$atbats
-pitchFX <- join(pitches, atbats, by = c("num", "url"))
+#pitches <- data$pitches
+#atbats <- data$atbats
+#pitchFX <- join(pitches, atbats, by = c("num", "url"))
 
-unique(pitchFX$pitch_type)
-pitchFX <- pitchFX[pitchFX$pitch_type == c("SL","CU"), ]
+#unique(pitchFX$pitch_type)
+#pitchFX <- pitchFX[pitchFX$pitch_type == c("SL","CU"), ]
 }
 

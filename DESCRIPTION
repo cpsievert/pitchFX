@@ -12,11 +12,10 @@ Depends:
     lubridate,
     stringr,
     animation,
-    plumbr
 LazyData: true
 Collate:
-    'UrlsToDataFrame.R'
+    'urlsToDataFrame.R'
     'help.R'
-    'optional.R'
-    'animate.R'
-    'scrapePitches.R'
+    'scrapePitchFX.R'
+    'constructURLs.R'
+    'animateFX.R'

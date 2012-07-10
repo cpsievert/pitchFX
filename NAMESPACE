@@ -1,2 +1,3 @@
 export(animateFX)
 export(scrapePitchFX)
+export(urlsToDataFrame)

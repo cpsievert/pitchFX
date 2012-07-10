@@ -1,16 +1,15 @@
 \name{adjust}
 \alias{adjust}
-\title{Adjust XML attributes}
+\title{"Adjust" attributes to match the entire set}
 \usage{
   adjust(info, tags)
 }
 \arguments{
-  \item{info}{XML attributes from a specific node}
+  \item{info}{XML attributes}
 
-  \item{tags}{field names for a specific table}
+  \item{tags}{"complete" set of attribute names.}
 }
 \description{
-  This function adds NAs wherever an XML node is missing
-  information.
+  This function adds NAs to missing attributes.
 }
 

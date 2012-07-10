@@ -26,8 +26,7 @@
   Details to go here.
 }
 \examples{
-animateFX(data = pitchFX, color = "pitch_type", facets = "p_throws",
-time.interval = 0.01)
+#animateFX(data = pitchFX, color = "pitch_type", facets = "p_throws", time.interval = 0.01)
 #Possible choices for color and facets. Does it make sense to have one
 #variable determine both color and facet?
 #c("pitcher", "batter", "p_throws", "stand", "zone", "type", "pitch_type",
