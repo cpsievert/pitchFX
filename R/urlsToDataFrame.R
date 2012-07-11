@@ -60,6 +60,7 @@ urlsToDataFrame <- function(urls, tables = list(atbat = NULL, pitch = NULL)) {
     ctr <- ctr + 1
   }
   if (length(names(tables)) > 1) names(frames) <- names(ordered.tables)
+  names(frames$atbat) <- gsub("final.", "", names(frames$atbat))
   return(frames)
 }
 
@@ -118,7 +119,7 @@ docsToDataFrame <- function(docs, node, fields, urls) {
 #' 
 #' This function adds NAs to missing attributes.
 #'
-#' @param info XML attributes
+#' @param info XML attributes from a particular node.
 #' @param tags "complete" set of attribute names.
 
 #Adjust function used inside of UrlsToDataFrame
@@ -126,8 +127,14 @@ adjust <- function(info, tags){ #Adds NAs wherever a tag is missing
   x <- names(info)
   y <- tags
   z <- match(x, y)
+  w <- z[!is.na(z)] #get rid of elements in info that doesn't match tags (allows fields to be flexible)
   a <- rep(NA, length(tags))
-  a[z] <- info
+  if (length(w) < length(z)) {
+    relevant.info <- info[which(!is.na(z))]
+    a[w] <- relevant.info
+  } else {
+    a[z] <- info
+  }
   names(a) <- tags
   return(a)
 }
