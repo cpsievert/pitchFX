@@ -2,8 +2,7 @@
 \alias{scrapePitchFX}
 \title{Scrape Pitch F/X Data}
 \usage{
-  scrapePitchFX(start = "2012-01-01", end = Sys.Date(),
-    game.data = all_games)
+  scrapePitchFX(start = "2012-01-01", end = Sys.Date())
 }
 \arguments{
   \item{start}{date "yyyy-mm-dd" to commence scraping of
@@ -11,8 +10,6 @@
 
   \item{end}{date "yyyy-mm-dd" to terminate scraping pitch
   F/X data}
-
-  \item{game.data}{data set with game URLs}
 }
 \value{
   Returns a list containing two different data frames. The
@@ -31,8 +28,8 @@
 #data <- scrapePitchFX(start = "2011-05-01", end = "2011-05-01")
 #ptm
 
-#pitches <- data$pitches
-#atbats <- data$atbats
+#pitches <- data$pitch
+#atbats <- data$atbat
 #pitchFX <- join(pitches, atbats, by = c("num", "url"))
 
 #unique(pitchFX$pitch_type)

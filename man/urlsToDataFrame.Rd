@@ -8,27 +8,26 @@
 \arguments{
   \item{urls}{set of urls for parsing}
 
-  \item{tags}{list of character vectors containing field
-  names for each table}
-
-  \item{nodes}{XML node(s) of interest that deem scope of
-  table}
+  \item{tables}{list of character vectors containing field
+  names for each table. The list names have to correspond
+  to XML nodes of interest within the XML files.}
 }
 \value{
   Returns a data frames if the length of tables is one.
   Otherwise, it returns a list of data frames.
 }
 \description{
-  The intended use for this function is to scrape an
+  The primary use for this function is to scrape an
   "atbats" table and the corresponding "pitch" (ie, Pitch
   F/X) table for the specified set of URLs. In fact, this
-  function is used as the main component of
-  \code{scrapePitchFX}. There is added flexibility that
-  allows one to specify nodes of interest other than
-  "atbat" and "pitch". \bold{Important: You must have
-  "atbat" AND "pitch" nodes if you want to identify who
-  threw a particular pitch. Also, the order of field names
-  should match the order of nodes.}
+  function is used as the core functionality behind
+  \code{scrapePitchFX}. This function provides added
+  flexibility by allowing one to specify nodes of interest
+  other than "atbat" and "pitch". \bold{Important: You must
+  have "atbat" AND "pitch" nodes if you want to identify
+  who threw a particular pitch. Also, if you specify field
+  names for the table, you should be confident that those
+  are the most complete set of fields.}
 }
 \examples{
 #If it isn't currently baseball season, consider changing the dates below:

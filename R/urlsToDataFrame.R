@@ -1,15 +1,15 @@
 #' Function for parsing urls and specified nodes into data frames
 #' 
-#' The intended use for this function is to scrape an "atbats" table and the corresponding "pitch" 
-#' (ie, Pitch F/X) table for the specified set of URLs. In fact, this function is used as the main 
-#' component of \code{scrapePitchFX}. There is added flexibility that allows one to specify nodes 
-#' of interest other than "atbat" and "pitch". \bold{Important: You must have "atbat" AND "pitch"
-#' nodes if you want to identify who threw a particular pitch. Also, the order of field names should 
-#' match the order of nodes.}
+#' The primary use for this function is to scrape an "atbats" table and the corresponding "pitch" 
+#' (ie, Pitch F/X) table for the specified set of URLs. In fact, this function is used as the core 
+#' functionality behind \code{scrapePitchFX}. This function provides added flexibility by allowing 
+#' one to specify nodes of interest other than "atbat" and "pitch". 
+#' \bold{Important: You must have "atbat" AND "pitch" nodes if you want to identify who threw a 
+#' particular pitch. Also, if you specify field names for the table, you should be confident that those
+#' are the most complete set of fields.}
 #' 
 #' @param urls set of urls for parsing
-#' @param tags list of character vectors containing field names for each table
-#' @param nodes XML node(s) of interest that deem scope of table
+#' @param tables list of character vectors containing field names for each table. The list names have to correspond to XML nodes of interest within the XML files.
 #' @return Returns a data frames if the length of tables is one. Otherwise, it returns a list of data frames.
 #' @export
 #' @examples
@@ -45,19 +45,17 @@ urlsToDataFrame <- function(urls, tables = list(atbat = NULL, pitch = NULL)) {
   for (j in names(ordered.tables)) {
     fields <- unlist(ordered.tables[[ctr]])
     frame <- docsToDataFrame(docs = docs, node = j, fields = fields, urls = url.vector)
-    if (j == "atbat") {
+    if (j == "atbat" & !any(names(tables) == "pitch")) {
       frame <- frame$final
-      if (any(names(tables) == "pitch")) {
-        atbat.id <- frame$atbat_id
-      }
     }
     if (j == "pitch" & any(names(tables) == "atbat")) {
-      frame$num <- atbat.id
+      frame$num <- frames$atbat_id
+      frames$atbat_id <- NULL
     }
     if (ctr == 1) {
       frames <- frame
     } else {
-      frames <- list(frames, frame)
+      frames <- list(as.data.frame(frames), frame)
     }
     ctr <- ctr + 1
   }

@@ -44,8 +44,8 @@ animateFX <- function(data, color, facets, time.interval = 0.01){
   names(splits) <- facets
   #return(names(facets))
   
-  t <- rep(0, length(type)) #Initial time (at point of release)
-  y <- rep(50, length(type)) #Initial distance from home plate
+  t <- rep(0, length(holder)) #Initial time (at point of release)
+  y <- rep(50, length(holder)) #Initial distance from home plate
   while (any(as.numeric(y) > 1.417)) { 
     x <- x0 + vx0*t + .5*ax*t^2 #Inside/Outside location (at time t)
     y <- y0 + vy0*t + .5*ay*t^2 #Distance from home plate

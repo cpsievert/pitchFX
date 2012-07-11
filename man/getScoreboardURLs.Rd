@@ -5,11 +5,11 @@
   getScoreboardURLs(start, end)
 }
 \arguments{
-  \item{first.date}{date (yyyy-mm-dd) to commence scraping
-  of pitch F/X data}
-
-  \item{last.date}{date (yyyy-mm-dd) to terminate scraping
+  \item{start}{date (yyyy-mm-dd) to commence scraping of
   pitch F/X data}
+
+  \item{end}{date (yyyy-mm-dd) to terminate scraping pitch
+  F/X data}
 }
 \value{
   Returns a list of "miniscoreboard" URLs.

@@ -4,8 +4,8 @@
 #'\code{end}. Not every URL will exist. For those that do, the file will contain
 #'information on every game played during that day.
 #'
-#' @param first.date  date (yyyy-mm-dd) to commence scraping of pitch F/X data
-#' @param last.date date (yyyy-mm-dd) to terminate scraping pitch F/X data
+#' @param start  date (yyyy-mm-dd) to commence scraping of pitch F/X data
+#' @param end date (yyyy-mm-dd) to terminate scraping pitch F/X data
 #' @return Returns a list of "miniscoreboard" URLs.
 
 getScoreboardURLs <- function(start, end) {
