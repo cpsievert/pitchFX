@@ -5,7 +5,7 @@
   adjust(info, tags)
 }
 \arguments{
-  \item{info}{XML attributes}
+  \item{info}{XML attributes from a particular node.}
 
   \item{tags}{"complete" set of attribute names.}
 }

@@ -23,11 +23,14 @@
   function is used as the core functionality behind
   \code{scrapePitchFX}. This function provides added
   flexibility by allowing one to specify nodes of interest
-  other than "atbat" and "pitch". \bold{Important: You must
-  have "atbat" AND "pitch" nodes if you want to identify
-  who threw a particular pitch. Also, if you specify field
-  names for the table, you should be confident that those
-  are the most complete set of fields.}
+  other than "atbat" and "pitch". If the value of the list
+  is NULL, this function will automatically generate the
+  most complete collection of data points. \bold{Important:
+  You must have "atbat" AND "pitch" nodes if you want to
+  identify who threw a particular pitch. Also, if you
+  specify field names for the table, you should be
+  confident that those are the most complete set of
+  fields.}
 }
 \examples{
 #If it isn't currently baseball season, consider changing the dates below:
