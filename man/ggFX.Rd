@@ -10,6 +10,20 @@
 \arguments{
   \item{data}{pitch F/X data to be visualized.}
 
+  \item{geom}{}
+
+  \item{stat}{}
+
+  \item{color}{}
+
+  \item{size}{}
+
+  \item{alpha}{}
+
+  \item{facets}{}
+
+  \item{shape}{}
+
   \item{layer}{list of ggplot2 modifications to the plot}
 
   \item{time.interval}{time interval between flushing of

@@ -5,6 +5,13 @@
 #' More flexible animation.
 #' 
 #' @param data pitch F/X data to be visualized.
+#' @param geom
+#' @param stat
+#' @param color
+#' @param size
+#' @param alpha
+#' @param facets
+#' @param shape
 #' @param layer list of ggplot2 modifications to the plot
 #' @param time.interval time interval between flushing of plot
 #' @return ggplot2 object
