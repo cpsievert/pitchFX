@@ -10,19 +10,19 @@
 \arguments{
   \item{data}{pitch F/X data to be visualized.}
 
-  \item{geom}{}
+  \item{geom}{NA}
 
-  \item{stat}{}
+  \item{stat}{NA}
 
-  \item{color}{}
+  \item{color}{NA}
 
-  \item{size}{}
+  \item{size}{NA}
 
-  \item{alpha}{}
+  \item{alpha}{NA}
 
-  \item{facets}{}
+  \item{facets}{NA}
 
-  \item{shape}{}
+  \item{shape}{NA}
 
   \item{layer}{list of ggplot2 modifications to the plot}
 
