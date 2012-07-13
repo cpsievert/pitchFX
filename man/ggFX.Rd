@@ -24,10 +24,4 @@
 \details{
   More flexible animation.
 }
-\examples{
-#ggFX(data = pitchFX, color = "pitch_type", facets = "p_throws", time.interval = 0.01)
-#Possible choices for color and facets. Does it make sense to have one
-#variable determine both color and facet?
-#c("pitcher", "batter", "p_throws", "stand", "zone", "type", "pitch_type", "event")
-}
 
