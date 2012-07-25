@@ -1,4 +1,7 @@
 export(animateFX)
+export(getPitchFxURLs)
+export(getPlayerURLs)
+export(getScoreboardURLs)
 export(ggFX)
 export(scrapePitchFX)
 export(urlsToDataFrame)

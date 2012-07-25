@@ -11,14 +11,14 @@
 #' @export
 #' @examples
 #' #Simple scraping example
-#' data <- scrapePitchFX(start = "2011-10-01", end = "2011-10-02")
-#' pitches <- data$pitch
-#' atbats <- data$atbat
-#' pitchFX <- join(pitches, atbats, by = c("num", "url"))
+#' #data <- scrapePitchFX(start = "2011-10-01", end = "2011-10-02")
+#' #pitches <- data$pitch
+#' #atbats <- data$atbat
+#' #pitchFX <- join(pitches, atbats, by = c("num", "url"))
 #' #Subset data by pitch type
-#' pitchFX2 <- pitchFX[pitchFX$zone < 4 & pitchFX$pitch_type == c("FF", "CU", "SL"), ]
-#' animateFX(pitchFX2)
-#' animateFX(pitchFX2, layer = facet_grid(stand~p_throws))#How do I add titles to the facets (stand vs. p_throws)
+#' #pitchFX2 <- pitchFX[pitchFX$zone < 4 & pitchFX$pitch_type == c("FF", "CU", "SL"), ]
+#' #animateFX(pitchFX2)
+#' #animateFX(pitchFX2, layer = facet_grid(stand~p_throws))#How do I add titles to the facets (stand vs. p_throws)
 
 animateFX <- function(data, layer=NULL, time.interval = 0.01){ 
   #Add descriptions to pitch_types
@@ -29,6 +29,8 @@ animateFX <- function(data, layer=NULL, time.interval = 0.01){
   pitchFX <- merge(data, p.types, by = c("pitch_type"), sort = T)
   idx <- c("x0", "y0", "z0", "vx0", "vy0", "vz0", "ax", "ay", "az")
   snapshot <- pitchFX[complete.cases(pitchFX[,idx]),] #get rid of records with missing parameters
+  snapshot$p_throws <- paste("Pitcher Throws:", snapshot$p_throws)
+  snapshot$stand <- paste("Batter Stands:", snapshot$stand)
   for (i in idx) 
     snapshot[,i] <- as.numeric(snapshot[,i])
   t <- rep(0, dim(snapshot)[1]) #Initial time (at point of release)

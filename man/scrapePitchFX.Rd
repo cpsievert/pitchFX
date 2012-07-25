@@ -2,7 +2,9 @@
 \alias{scrapePitchFX}
 \title{Scrape Pitch F/X Data}
 \usage{
-  scrapePitchFX(start = "2012-01-01", end = Sys.Date())
+  scrapePitchFX(start = "2012-01-01", end = Sys.Date(),
+    include.games = T,
+    tables = list(atbat = fields$atbat, pitch = fields$pitch))
 }
 \arguments{
   \item{start}{date "yyyy-mm-dd" to commence scraping of
@@ -10,6 +12,11 @@
 
   \item{end}{date "yyyy-mm-dd" to terminate scraping pitch
   F/X data}
+
+  \item{include.games}{whether or not to include a game
+  table in the output}
+
+  \item{tables}{XML nodes to be parsed into a data frame}
 }
 \value{
   Returns a list containing two different data frames. The
@@ -28,8 +35,10 @@
 #data <- scrapePitchFX(start = "2011-05-01", end = "2011-05-01")
 #ptm
 
-#pitches <- data$pitch
+#games <- data$game
 #atbats <- data$atbat
+#pitches <- data$pitch
+
 #pitchFX <- join(pitches, atbats, by = c("num", "url"))
 
 #unique(pitchFX$pitch_type)

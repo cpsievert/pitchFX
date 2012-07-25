@@ -19,5 +19,6 @@ Collate:
     'scrapePitchFX.R'
     'constructURLs.R'
     'animateFX.R'
-    'all.games.R'
+    'games.R'
     'ggFX.R'
+    'fields.R'
