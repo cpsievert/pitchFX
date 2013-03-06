@@ -137,7 +137,7 @@ CREATE TABLE pitch (
    spin_rate FLOAT,
    num INTEGER NOT NULL,
    count CHAR(4) NOT NULL,
-   url CHAR(120) NOT NULL,
+   url CHAR(120) NOT NULL
 
 );
 
